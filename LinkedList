@@ -1,0 +1,98 @@
+Complete Linked List Concept
+---------------------------------
+# crete a node class
+class Node{
+int data;
+Node next;
+Node(int data){
+this.data=data;
+this.next=null;
+}
+}
+-------------------------------------
+#Normal as usual creation of java program
+public class Solution{
+public static void main(String[] args){
+}
+}
+-------------------------------------------
+# Let's try to insert a node
+#on considering default addition of node to the end of a linked list
+#write the function in a class called by any name lets take class as LinkedList{}
+class LinkedList{
+Node head;
+void int add(int elem){
+if(head==null) {
+//if no node existed before them attach temp
+head=temp;
+}else{
+// create a pointer to traverse all along the end of the list
+Node curr=this.head;
+// As we know the last node as dafault curr.next value has null
+while(curr.next!=null){
+curr.curr.next;
+}
+curr.next=temp;
+}
+}
+# in main function call this function by creating object of class LinkedList
+LinkedList obj=new LinkedList();
+ll.add(10);
+ll.add(20);
+-------------------------------------------------------------------------------
+#After we enter the list element , we need to print the contenet of the linked list
+void printAll(){
+
+Node curr=this.head;
+while(curr!=null){
+System.out.print(curr.data+"->");
+curr=curr.next;
+}
+}
+# in main call this function
+ll.printAll();
+---------------------------------------------------------------------------------------------
+## OUTPUT 
+class Node{
+  int data;
+  Node next;
+  Node(int data){
+  this.data=data;
+  this.next=null;
+  }
+  }
+  class LinkedList{
+  Node head;
+  void add(int elem){
+      Node temp=new Node(elem);
+  if(head==null) {
+  head=temp;
+  }else{
+  Node curr=this.head;
+  while(curr.next!=null){
+  curr=curr.next;
+  }
+  curr.next=temp;
+  }
+  }
+  void printAll(){
+  Node curr=this.head;
+  while(curr!=null){
+  System.out.print(curr.data+"->");
+  curr=curr.next;
+  }
+  System.out.println("null"); 
+  }
+  
+  }
+  public class Solution111{
+  public static void main(String[] args){
+  LinkedList ll=new LinkedList();
+  ll.add(10);
+  ll.add(20);
+  ll.printAll();
+  }
+  }
+o/p: 10->20->null
+----------------------------------------------------------------      
+  

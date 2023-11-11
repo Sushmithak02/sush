@@ -1,0 +1,345 @@
+PREPINSTA # top100codes
+==========================================
+1) Positive or Negative numbers
+   
+   int num=sc.nextint();
+if(num>0){
+System.out.print("positive");
+}else if(num==0){
+System.out.print("zero");
+}else{
+Sysytem.out.print("Negative");
+}
+---------------------------------------------
+2) Even or Odd number
+ Method 1: Brute force Approach 
+
+  int num=sc.nextInt();
+if(num%2==0){
+System.out.print("even");
+}
+System.out.print("odd");
+}
+
+Method 2: By using Bitwise Operators
+
+int num=sc.nextInt();
+if(num&1==1){
+System.out.print("odd");
+}else{
+System.out.print("even");
+}
+
+------------------------------------------------
+3) Sum of first N natural numbers
+
+int n=sc.nextint() // n is range
+ Method 1:
+
+ for(int i=0;i<n;i++){
+sum+=i;
+}
+
+Method 2:
+
+int sum=(n*(n+1))/2;
+
+---------------------------------------------
+4) sum of numbers in a given range
+
+int start=sc.nextInt();
+int end=sc.nextInt();
+for(int i=start;i<=end;i++)
+{
+sum+=i;
+}
+-----------------------------------------------
+5) Greatest of two numbers
+
+Method 1:
+
+int a=sc.nextInt();
+int b=sc.nextInt();
+if(a>b){
+return a;
+}
+return b;
+
+Method 2:
+
+greatest=Math.max(a,b);
+
+
+---------------------------------------------------
+6) Greatest of 3 Numbers
+
+int a=sc.nextInt();
+int b=sc.nextInt();
+int c=sc.nextInt();
+
+if(a>b & a>c){
+return a;
+}else if(b>a & b>c){
+retrn b;
+}else{
+return c;
+}
+----------------------------------------------------
+7) Leap year or Not
+# A year which is divisible by 400 is said to be leap year, but century year can't be leap year
+
+int year=sc.nextInt();
+if(year%400==0){
+s.o.p("leap");
+}else if(year%4==0 & year%100!==0){
+s.o.p("leap");
+}else{
+s.o.p("non leap year");
+}
+------------------------------------------------------
+8) Prime numbers
+# A number is said to be prime if it does not having any other multiple other than 1 and itself
+
+if(num<2){
+s.o.p("not a prime");
+}
+else{
+for(i=1;i<num;i++){
+if(num/i==0){
+count++;
+}
+}
+if(count>2){
+s.o.p("not a prime");
+}else{
+s.o.p("prime");
+}
+}
+
+# optimization of code by running loop over n/2
+-----------------------------------------------------------
+9) prime number in a given range
+
+int start=sc.nextInt();
+int end=sc.nextInt();
+for(i=start;i<end;i++){
+isPrime(i);
+}
+static boolean isPrime(int n){
+if(n<2){
+return false;
+}
+for(i=0;i<n/2;i++){
+if(n%i==0){
+return false;
+}
+}
+return true;
+}
+--------------------------------------------------------
+10) Sum of digits of a numbers
+ int num=1234;
+while(num!=0){
+sum+=num%10;
+num/=10;
+}
+-----------------------------------------------
+11) Reverse of a number
+ int num=sc.nextInt();
+while(num!=0){
+rem=num%10;
+rev=(rev*10)+rem;
+num/=10;
+}
+----------------------------------------------
+12) Palindrome of a number
+ int num=sc.nextInt();
+while(num!=0){
+rem=num%10;
+rev=(rev*10)+rem;
+num=num/10;
+}
+if(rev==num){
+s.o.p("palindrome");
+}else{
+s.o.p("not a palindrome");
+}
+  
+
+
+Method 2 :palindrome implementation through STACK
+
+String num="12321";
+Stack<character> stack=new Stack<>();
+char[] str=num.toCharArray();
+
+for(char i:str){
+stack.push(i);
+}
+
+int n=stack.size();
+char[] str2=new char[n];
+for(int j=0;j<n;j++){
+str2[i]=stack.pop();
+}
+String reversed=str2.toString();
+if(num==reversed){
+return true;
+}else{
+return false;
+}
+}
+----------------------------------------------------------
+13) Armstrong numbers
+
+#armstrong numbers are those number 
+int num=sc.nextInt();
+    int sum=0;
+    int n=(int)(Math.log10(num)+1);
+    while(num!=0){
+      int rev=num%10;
+      sum+=Math.pow(rev,n);
+      num=num/10;
+      
+    }
+if(sum==num){
+S.o.p("Armstrong number");
+}else{
+s.o.p("not a armstrong number");
+}
+----------------------------------------------------------
+14) Armstrong number in a given range
+
+int start=sc.nextInt();
+int end=sc.nextInt();
+ 
+for(int i=start;i<=end;i++){
+
+   
+    int n=(int)(Math.log10(i)+1);
+    int temp=i;
+    int sum=0;
+    while(temp!=0){
+      int rev=temp%10;
+      sum+=Math.pow(rev,n);
+      temp=temp/10;
+    }
+    if(sum==i){
+    System.out.print(i+" ");
+    }
+
+------------------------------------------------------------
+14) Fibonocci series upto n terms
+int start=sc.nextInt();
+    int a=0,b=1;
+    int nextterm=0;
+    
+    System.out.print(a+" "+b+" ");
+for(int i=2;i<start;i++){
+ nextterm=a+b;
+ a=b;
+ b=nextterm;
+ System.out.print(nextterm+" ");
+}
+ --- -------------------------------------------------------------
+15) Nth term of a fibonocci series
+
+# to find the nth term run the loop recursively
+
+ static int fib(int n)
+    {
+        if (n==0)
+            return 0;
+      else if(n==1 || n==2)
+            return 1;
+        return fib(n - 1) + fib(n - 2);
+    }
+-----------------------------------------------------------------------
+16) Factorial of a number
+
+int start=sc.nextInt();
+    int fact=1;
+    if(start==0){
+      fact=1;
+    }else{
+    for(int i=1;i<=start;i++){
+      fact=fact*i;
+    }
+  }
+  System.out.print(fact);
+ ----------------------------------------------------------------------
+17) Power of a number
+
+Method 1: By inbuild Math function
+
+ int pow=Math.pow(num,index);
+
+ Method 2:
+int base=sc.nextInt();
+    int expo=sc.nextInt();
+    int res=1;
+while(expo!=0){
+  res=res*base;
+  expo--;
+}
+System.out.print(res);
+
+-------------------------------------------------------------------------
+18) Finding the factors of a number
+
+int num=sc.nextInt();
+for(int i=0;i<num;i++){
+if(num%i==0){
+s.o.p(i+" ");
+}
+s.o.p(num);//bcz number itself is a factor of itself
+--------------------------------------------------------------------------
+19) Finding the prime factors of a number
+# inorder to find prime factor , step1: create a method which checks whether the number is prime or not
+step2: if the number is prime, then find the factor of that number
+
+static int isPrime(int n){
+for(int i=2;i<Math.sqrt(n);i++){
+if(n%i==0){
+return 0;
+}
+return 1;
+}
+
+static int primefact(int n){
+for(int i=2;i<n;i++){
+if(isPrime(i)==1){
+int temp=n;
+while(temp%i==0){
+s.o.p(i+" ");
+temp=temp/i;
+}
+}
+}
+--------------------------------------------------------------------
+20) Strong Number
+# A strong numbers are those , where the factorial of each individual numbers sums upto number itself
+int num=sc.nextInt();
+ // 145
+ int sum=0;
+ int res=1;
+
+ while(num!=0){
+  int last=num%10;
+  for(int i=1;i<=last;i++){
+    res=res*i;
+    
+  }
+ 
+  num=num/10;
+  sum+=res;
+  res=1;// reset result to 1
+ }
+System.out.print(sum);
+=================================================================================================
+Solution of 20 Basic coding question
+
+
+
+
+
